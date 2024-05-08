@@ -2,7 +2,7 @@
 #include <algorithm> 
 #include <vector>
 #include <string>
-#include <intrin.h> // Include for __cpuid
+#include <intrin.h>
 
 struct CPUFeature {
     int function_id;
