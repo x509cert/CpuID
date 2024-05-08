@@ -43,8 +43,12 @@ public:
         }
     }
 
-    void printSupportedFeatures() {
+    void sortFeaturesData() {
         std::sort(_supportedFeatures.begin(), _supportedFeatures.end());
+        std::sort(_unsupportedFeatures.begin(), _unsupportedFeatures.end());
+    }
+
+    void printSupportedFeatures() const {
 
         std::cout << "***Supported Features:" << std::endl;
         for (const auto& feature : _supportedFeatures) {
@@ -52,9 +56,8 @@ public:
         }
     }
 
-    void printUnsupportedFeatures() {
-        std::sort(_unsupportedFeatures.begin(), _unsupportedFeatures.end());
-
+    void printUnsupportedFeatures() const {
+       
         std::cout << "\n***Unsupported Features:" << std::endl;
         for (const auto& feature : _unsupportedFeatures) {
             std::cout << feature << std::endl;
@@ -162,6 +165,7 @@ int main() {
 
     CPUFeaturesChecker checker;
     checker.checkCPUFeatures(features);
+    checker.sortFeaturesData();
     checker.printSupportedFeatures();
     checker.printUnsupportedFeatures();
 
